@@ -1,0 +1,74 @@
+
+
+function AddBout() {
+
+  return (
+  <>
+    <h1>Add a bout</h1>
+  <form action="somewhere.else" method="post">
+    <label for="opponents">Opponents</label>
+    <select id="opponents" name="opponents" required>
+      <option value="add-an-opponent">Add an Opponent</option>
+    </select>
+    <fieldset>
+      <legend>Final Score</legend>
+
+      <label for="my-score">My Score</label>
+      <input type="number" id="my-score" name="my-score" min="0" max="15" step="1" required />
+
+      <label for="opponent-score">Opponent Score</label>
+      <input type="number" id="opponent-score" name="opponent-score" min="0" max="15" step="1" required />
+
+      <div>Winner (only if scores are tied):</div>
+      <label for="my-win">I won:</label>
+      <input type="radio" id="my-win" name="winner" value="my-win" />
+
+      <label for="opponent-win">Opponent won:</label>
+      <input type="radio" id="opponent-win" name="winner" value="opponent-win" />
+    </fieldset>
+    <fieldset>
+      <legend>Cards</legend>
+
+      <label>My Cards:</label>
+
+      <label for="yellow">Yellow:</label>
+      <input type="checkbox" id="yellow" name="my-cards" value="yellow" />
+      
+      <label for="red">Red:</label>
+      <input type="number" id="red" name="red" min="0" max="15" step="1" />
+
+      <label for="black">Black:</label>
+      <input type="checkbox" id="black" name="my-cards" value="black" />
+
+      <label>Opponent Cards:</label>
+
+      <label for="yellow">Yellow:</label>
+      <input type="checkbox" id="yellow" name="my-cards" value="yellow" />
+      
+      <label for="red">Red:</label>
+      <input type="number" id="red" name="red" min="0" max="15" step="1" />
+
+      <label for="black">Black:</label>
+      <input type="checkbox" id="black" name="my-cards" value="black" />
+
+      <label>P-Cards:</label>
+
+      <label for="p-yellow">P-Yellow</label>
+      <input type="radio" id="p-yellow" name="p-cards" value="p-yellow" />
+
+      <label for="p-red">P-Red</label>
+      <input type="radio" id="p-red" name="p-cards" value="p-red" />
+
+      <label for="p-black">P-Black</label>
+      <input type="radio" id="p-black" name="p-cards" value="p-black" />
+    </fieldset>
+    <label for="notes">General Notes</label>
+    <textarea></textarea>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </form>
+  </>
+  )
+}
+
+export default AddBout

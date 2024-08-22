@@ -1,8 +1,18 @@
 import { useState } from 'react'
 import './App.css'
+import Opponents from './Opponents'
+import Bouts from './Bouts'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [oppoView, setOppoView] = useState("opponents")
+
+  const switchView = () => {
+    if (oppoView === "opponents") {
+      setOppoView("bouts")
+    } else {
+      setOppoView("opponents")
+    }
+  }
 
   return (
     <>
@@ -12,15 +22,9 @@ function App() {
     <div id="profile">silohuette</div>
   </div>
   <div id="statsBlock">
-    <div id="winrate">pie chart</div>
     <div>
-      <ul id="opponents">
-        <li>place holder 1</li>
-        <li>place holder 2</li>
-        <li>place holder 3</li>
-      </ul>
-      <a href="new-fencer.html" className="button">Add a New Opponent!</a>
-      <a href="new-bout.html" className="button">Add a New Bout!</a>
+      <button onClick={switchView}>{oppoView}</button>
+      {(oppoView === "opponents") ? <Opponents /> : <Bouts />}
     </div>
   </div>
   <div id="footer">
